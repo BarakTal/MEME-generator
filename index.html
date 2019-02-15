@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
 
 
 
@@ -20,7 +23,7 @@
     <header>
         <div class="header-text text-center">welcome, enjoy editing the memes.</div>
     </header>
-    <main class="flex">
+    <main class="flex justify-center">
         <div class="canvas-container">
             <canvas class="my-canvas" style="border: 1px solid red"></canvas>
         </div>
@@ -28,7 +31,7 @@
         <aside class="editor-container">
             <div class="button-container">
 
-                <input onchange="onColorChange(this.value)" type="color" name="" id="font-color">
+                <!-- <input onchange="onColorChange(this.value)" type="color" name="" id="font-color"> -->
                 <button onclick="onAlignText('left')" class="fa fa-align-left"></button>
                 <button onclick="onAlignText('right')" class="fa fa-align-right"></button>
                 <button onclick="onAlignText(-5)" class="fas fa-arrow-left"></button>
@@ -42,27 +45,38 @@
                 <button onclick="onFontSizeChange(-5)" class="fas fa-minus"></button>
             </div>
             <div class="select-container">
-                <select onchange="onChangeFont(this.value)" class="draw-options">
+                    <input onchange="onColorChange(this.value)" type="color" class="input" name="" id="font-color">
+
+                <select onchange="onChangeFont(this.value)" class="input btn btn-secondary dropdown-toggle">
                     <option>impcat</option>
                     <option>Courier </option>
                     <option>monospace</option>
                 </select>
-                <select onchange="onChangeCurrLine(this.value)" class="draw-options">
+                <select onchange="onChangeCurrLine(this.value)" class="input btn btn-secondary dropdown-toggle">
                     <option>line-one</option>
                     <option>line-two </option>
                     <option>line-three</option>
                 </select>
             </div>
             <div class="input-container">
-                enter text
-                <input autofocus oninput="onWriteOnCanvas(this.value)" placeholder="please enter text" type="text" name="" id="text-input">
+
+                <input autofocus oninput="onWriteOnCanvas(this.value)" class="input-group-text" placeholder="enter text here" type="text" name=""
+                    id="text-input">
             </div>
             <a href="#" class="fa fa-save save" onclick="downloadImg(this)" download="my-canvas.jpg"></a>
         </aside>
     </main>
 
     <script src="js/meme-service.js"></script>
-    <!-- <script src="js/text-movement.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="js/meme-controller.js"></script>
     <script src="js/meme-utills.js"></script>
 </body>

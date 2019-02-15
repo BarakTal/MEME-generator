@@ -22,7 +22,7 @@ function renderCanvas() {
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
         renderText()
     };
-    gImg.src = 'img/2.jpg';
+    gImg.src = 'img/8.jpg';
 }
 
 function renderText() {

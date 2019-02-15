@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/reset-css.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+    <title>my meme generator</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <div class="header-text text-center">welcome, enjoy editing the memes.</div>
+    </header>
+    <main class="flex">
+        <div class="canvas-container">
+            <canvas class="my-canvas" style="border: 1px solid red"></canvas>
+        </div>
+
+        <aside class="editor-container">
+            <div class="button-container">
+
+                <input onchange="onColorChange(this.value)" type="color" name="" id="font-color">
+                <button onclick="onAlignText('left')" class="fa fa-align-left"></button>
+                <button onclick="onAlignText('right')" class="fa fa-align-right"></button>
+                <button onclick="onAlignText(-5)" class="fas fa-arrow-left"></button>
+                <button onclick="onAlignText(5)" class="fas fa-arrow-right"></button>
+                <button onclick="onAlignText('up')" class="fas fa-arrow-up"></button>
+                <button onclick="onAlignText('down')" class="fas fa-arrow-down"></button>
+                <button onclick="onTextDecoration('bold')" class="fa fa-bold"></button>
+                <button onclick="onTextDecoration('italic')" class="fa fa-italic"></button>
+                <button onclick="onDeleteLine()" class="fa fa-eraser"></button>
+                <button onclick="onFontSizeChange(5)" class="fas fa-plus"></button>
+                <button onclick="onFontSizeChange(-5)" class="fas fa-minus"></button>
+            </div>
+            <div class="select-container">
+                <select onchange="onChangeFont(this.value)" class="draw-options">
+                    <option>impcat</option>
+                    <option>Courier </option>
+                    <option>monospace</option>
+                </select>
+                <select onchange="onChangeCurrLine(this.value)" class="draw-options">
+                    <option>line-one</option>
+                    <option>line-two </option>
+                    <option>line-three</option>
+                </select>
+            </div>
+            <div class="input-container">
+                enter text
+                <input autofocus oninput="onWriteOnCanvas(this.value)" placeholder="please enter text" type="text" name="" id="text-input">
+            </div>
+            <a href="#" class="fa fa-save save" onclick="downloadImg(this)" download="my-canvas.jpg"></a>
+        </aside>
+    </main>
+
+    <script src="js/meme-service.js"></script>
+    <!-- <script src="js/text-movement.js"></script> -->
+    <script src="js/meme-controller.js"></script>
+    <script src="js/meme-utills.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    font-size: 2rem
+}
+.save{
+    /* background-color:lightblue; */
+    font-size: 91px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+}
+.canvas-container {
+    max-width: 70%;
+    /* width: 100%; */
+    height: auto;
+    /* margin: 0 auto; */
+    border: 1px solid black;
+}
+.editor-container{
+    background-color: rgb(66, 159, 221);
+    width: 100%;
+    position: relative;
+}
+button{
+    width: 45px;
+    height: 45px;
+    margin: 5px
+}
+button:hover{
+    background-color: lightcoral;
+}
+#text-input{
+    /* margin: 0 auto; */
+    width: 50%;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 50px
+}
+input[type="text"]
+{
+    font-size:24px;
+}
+header{
+    height: 50px;
+    background-color: lightblue;
+}
+.header-text{
+    font-size: 2rem;
+}
+
+
+/* HELPERS */
+.flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center
+}
+.align-center{
+    align-items: center
+}
+.text-center{
+    text-align: center
+}
+.clean-text{
+    text-decoration: none;
+}

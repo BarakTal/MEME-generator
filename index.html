@@ -8,10 +8,10 @@
 
     <link rel="stylesheet" href="css/reset-css.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-   
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/style.css">
 
 
@@ -25,8 +25,9 @@
         <div class="logo"> </div>
         <div class="nav-bar">
             <div class="info nav-item">info</div>
-            <div class="about nav-item"><a href="https://baraktal.github.io/ca-gallery-master/" target="_blank">about</a></div>
-<div class="contact"><a href="contact.html" class="fas fa-envelope"></a></div>  
+            <div class="about nav-item"><a href="https://baraktal.github.io/ca-gallery-master/"
+                    target="_blank">About</a></div>
+            <div class="contact"><a href="contact.html" class="">Contact</a></div>
 
 
         </div>
@@ -53,14 +54,15 @@
                 <button onclick="onFontSizeChange(-5)" class="fas fa-minus"></button>
             </div>
             <div class="select-container">
-                    <input onchange="onColorChange(this.value)" type="color" class="input" name="" id="font-color">
-
+                Change the color
+                <input onchange="onColorChange(this.value)" type="color" class="input" name="" id="font-color">
+                Change the font
                 <select onchange="onChangeFont(this.value)" class="input btn btn-secondary dropdown-toggle">
                     <option>impcat</option>
                     <option>Courier </option>
                     <option>monospace</option>
                 </select>
-                edit lines
+                Edit text lines
                 <select onchange="onChangeCurrLine(this.value)" class="input btn btn-secondary dropdown-toggle">
                     <option>line-one</option>
                     <option>line-two </option>
@@ -69,15 +71,15 @@
             </div>
             <div class="input-container">
 
-                <input autofocus oninput="onWriteOnCanvas(this.value)" class="input-group-text" placeholder="enter text here" type="text" name=""
-                    id="text-input">
+                <input autofocus oninput="onWriteOnCanvas(this.value)" class="input-group-text"
+                    placeholder="enter text here" type="text" name="" id="text-input">
             </div>
             <a href="#" class="fa fa-save save" onclick="downloadImg(this)" download="my-canvas.jpg"></a>
         </aside>
     </main>
-<footer>
+    <footer>
 
-</footer>
+    </footer>
     <script src="js/meme-service.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

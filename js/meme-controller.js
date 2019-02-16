@@ -107,6 +107,21 @@ function clickedText(idx) {
     document.querySelector('#line-selector').value = gTexts[idx].line
     document.querySelector('#text-input').value = gTexts[idx].text
     gCurrTextLine = gTexts[idx].line
+    gIsDragActive=true
+
+}
+
+function onActiveDrag(ev){
+    gIsDragActive=true
+}
 
 
+function onMouseReleased(ev){
+    gIsDragActive=false
+}
+
+function onMouseMove(ev){
+    if (!gIsDragActive) return;
+    moveText(ev)
+    renderCanvas()
 }

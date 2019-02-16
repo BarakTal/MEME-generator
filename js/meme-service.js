@@ -5,6 +5,8 @@ var gCtx
 var gImg
 var gCanvas = document.querySelector('.my-canvas')
 var gTexts
+var gIsDragActive = false
+var gMouseObj
 
 
 function createTexts() {
@@ -56,7 +58,7 @@ function setTextHeight() {
 }
 
 function findTextIdx() {
-    console.log('checking id')
+    // console.log('checking id')
 
     var index = gTexts.findIndex(function (text) {
         return (text.line === gCurrTextLine)
@@ -111,23 +113,28 @@ function deleteLine() {
 }
 
 function mouseClicked(ev) {
-    // console.log(ev)
-    // gTexts.forEach(function(text,idx){
 
-    //     if (ev.offsetX > text[idx].x && ev.offsetX < (text[idx].x + text[idx].width) &&
-    //         ev.offsetY < text[idx].y && ev.offsetY > text[idx].y - (text[idx].size)) {
-    //         clickedText(idx)
-    //     }
-    // })
     for (var idx = 0; idx < gTexts.length; idx++) {
         if (ev.offsetX > gTexts[idx].x && ev.offsetX < (gTexts[idx].x + gTexts[idx].width) &&
             ev.offsetY < gTexts[idx].y && ev.offsetY > gTexts[idx].y - (gTexts[idx].size)) {
             clickedText(idx)
+            gMouseObj = {
+                lastX: ev.offsetX,
+                lastY: ev.offsetY
+
+            }
         }
     }
 }
 
 
-
+function moveText(ev) {
+    if (!gIsDragActive) return
+    var idx = findTextIdx()
+    var x = ev.offsetX
+    var y = ev.offsetY
+    gTexts[idx].x = x
+    gTexts[idx].y = y
+}
 
 

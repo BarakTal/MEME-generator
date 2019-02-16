@@ -11,7 +11,11 @@ function init() {
     renderCanvas(gCanvas)
 }
 
-
+function resizeCanvas(canvas) {
+    var elCanvasContainer = document.querySelector('.canvas-container')
+    canvas.width = elCanvasContainer.offsetWidth
+    canvas.height = elCanvasContainer.offsetHeight
+ }
 
 function renderCanvas() {
     gImg = new Image();
@@ -87,3 +91,12 @@ function onDeleteLine(){
     deleteLine()
     renderCanvas()
 }
+
+function onSendEmail() {
+    var name = $('#user-name').val()
+    var subject = $('#user-subject').val()
+    var msg = $('#contact-form').val()
+  
+    var url = `https://mail.google.com/mail/?view=cm&fs=1&to=tal63566@gmail.com&su=${subject}-${name}&body=${msg}`
+    window.open(url, '_blank')
+  }

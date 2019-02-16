@@ -15,7 +15,7 @@ function createTexts() {
             style: 'normal',
             size: 50,
             x: 50,
-            y: 0,
+            y: 50,
             color: 'black',
             text: '',
         },
@@ -24,8 +24,8 @@ function createTexts() {
             font: 'Impact',
             style: 'normal',
             size: 50,
-            x: 50,
-            y: 0,
+            x: 200,
+            y: 100,
             color: 'black',
             text: ''
         },
@@ -35,7 +35,7 @@ function createTexts() {
             style: 'normal',
             size: 50,
             x: 50,
-            y: 0,
+            y: 150,
             color: 'black',
             text: ''
         },
@@ -43,13 +43,13 @@ function createTexts() {
     return textArr
 }
 
-function setTextHeight(){
-gTexts.forEach(element => {
-    if (element.line==='line-one') element.y=50
-    if (element.line==='line-two') element.y=element.y=gImg.naturalHeight/3
-    if (element.line==='line-three') element.y=element.y=gImg.naturalHeight/2
-    
-});
+function setTextHeight() {
+    gTexts.forEach(element => {
+        if (element.line === 'line-one') element.y = gImg.naturalHeight / 10
+        if (element.line === 'line-two') element.y = element.y = gImg.naturalHeight / 2
+        if (element.line === 'line-three') element.y = element.y = gImg.naturalHeight / 3
+
+    });
 }
 
 function findTextIdx() {
@@ -75,12 +75,15 @@ function alignText(val) {
     var index = findTextIdx()
     var curr = gTexts[index]
     // debugger
+    if (val === "up"){
+        curr.y += -5
+        console.log('h')
+    } 
+    if (val === "down") curr.y += 5
     if (val === 'left') curr.x = 50
     if (val === 'right') curr.x = gImg.naturalWidth / 2
     if (val === 5 || val === -5) curr.x += val
-    if (val === "up") curr.y += (-5)
-    if (val === "down") curr.y += 5
-    
+
 }
 
 function textDecoration(val) {
@@ -93,13 +96,13 @@ function textDecoration(val) {
 }
 
 
-function changeFont(val){
+function changeFont(val) {
     var index = findTextIdx()
     var curr = gTexts[index]
-    curr.font=val
+    curr.font = val
 }
 
-function  deleteLine(){
+function deleteLine() {
     var index = findTextIdx()
-    gTexts[index].text=''
+    gTexts[index].text = ''
 }

@@ -34,7 +34,7 @@
     </header>
     <main class="flex justify-center">
         <div class="canvas-container">
-            <canvas class="my-canvas" style="border: 1px solid red"></canvas>
+            <canvas class="my-canvas" onclick="mouseClicked(event)" style="border: 1px solid red"></canvas>
         </div>
 
         <aside class="editor-container">
@@ -63,7 +63,7 @@
                     <option>monospace</option>
                 </select>
                 Edit text lines
-                <select onchange="onChangeCurrLine(this.value)" class="input btn btn-secondary dropdown-toggle">
+                <select onchange="onChangeCurrLine(this.value)" id="line-selector" class="input btn btn-secondary dropdown-toggle">
                     <option>line-one</option>
                     <option>line-two </option>
                     <option>line-three</option>

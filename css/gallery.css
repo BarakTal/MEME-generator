@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0px;
+}
+header{
+    background-color: lightblue;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+}
+h1{
+    margin: 0;
+}
+
+.card{
+    background: lightblue;
+    border: 1px solid red;
+    max-width: 300px;
+}
+.card-img{
+    background-color: blue;
+    height: 300px;
+}

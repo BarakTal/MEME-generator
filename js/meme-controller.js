@@ -52,6 +52,7 @@ function onWriteOnCanvas(txt) {
     //getting the text input, finding the index of the text array, puting the text inside the obj.
     var index = findTextIdx()
     gTexts[index].text = txt
+    gTexts[index].width = gCtx.measureText(txt).width
     renderCanvas()
 }
 
@@ -99,4 +100,13 @@ function onSendEmail() {
 
     var url = `https://mail.google.com/mail/?view=cm&fs=1&to=tal63566@gmail.com&su=${subject}-${name}&body=${msg}`
     window.open(url, '_blank')
+}
+
+function clickedText(idx) {
+    console.log(idx)
+    document.querySelector('#line-selector').value = gTexts[idx].line
+    document.querySelector('#text-input').value = gTexts[idx].text
+    gCurrTextLine = gTexts[idx].line
+
+
 }

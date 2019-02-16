@@ -99,7 +99,11 @@ width: 100%;
 }
 a:hover{
     background-color: #003B00;
-
+    
+}
+.contact:hover{
+    
+    background-color: #003B00;
 }
 .nav-item:hover{
     background-color: #003B00;

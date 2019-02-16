@@ -18,16 +18,18 @@ function createTexts() {
             y: 50,
             color: 'black',
             text: '',
+            width: 0,
         },
         {
             line: 'line-two',
             font: 'Impact',
             style: 'normal',
             size: 50,
-            x: 200,
-            y: 100,
+            x: 50,
+            y: 200,
             color: 'black',
-            text: ''
+            text: '',
+            width: 0,
         },
         {
             line: 'line-three',
@@ -35,9 +37,10 @@ function createTexts() {
             style: 'normal',
             size: 50,
             x: 50,
-            y: 150,
+            y: 100,
             color: 'black',
-            text: ''
+            text: '',
+            width: 0,
         },
     ]
     return textArr
@@ -75,10 +78,10 @@ function alignText(val) {
     var index = findTextIdx()
     var curr = gTexts[index]
     // debugger
-    if (val === "up"){
+    if (val === "up") {
         curr.y += -5
         console.log('h')
-    } 
+    }
     if (val === "down") curr.y += 5
     if (val === 'left') curr.x = 50
     if (val === 'right') curr.x = gImg.naturalWidth / 2
@@ -106,3 +109,25 @@ function deleteLine() {
     var index = findTextIdx()
     gTexts[index].text = ''
 }
+
+function mouseClicked(ev) {
+    // console.log(ev)
+    // gTexts.forEach(function(text,idx){
+
+    //     if (ev.offsetX > text[idx].x && ev.offsetX < (text[idx].x + text[idx].width) &&
+    //         ev.offsetY < text[idx].y && ev.offsetY > text[idx].y - (text[idx].size)) {
+    //         clickedText(idx)
+    //     }
+    // })
+    for (var idx = 0; idx < gTexts.length; idx++) {
+        if (ev.offsetX > gTexts[idx].x && ev.offsetX < (gTexts[idx].x + gTexts[idx].width) &&
+            ev.offsetY < gTexts[idx].y && ev.offsetY > gTexts[idx].y - (gTexts[idx].size)) {
+            clickedText(idx)
+        }
+    }
+}
+
+
+
+
+

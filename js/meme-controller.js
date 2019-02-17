@@ -19,12 +19,13 @@ function init() {
 // }
 
 function setCanvas() {
-    var bodyWidth= document.querySelector('body').clientWidth
-    if (bodyWidth>750) renderDesktopCanvas()
+    var bodyWidth = document.querySelector('body').clientWidth
+    if (bodyWidth > 750) renderDesktopCanvas()
     else renderMobileCanvas()
 }
 
-function renderCanvas(){
+function renderCanvas() {
+    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
     gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
     renderText()
 }
@@ -34,10 +35,10 @@ function renderMobileCanvas() {
     gImg.onload = function () {
         // setTextHeight()
         var elCanvasContainer = document.querySelector('.canvas-container')
-        var aspectRatio= gImg.width/gImg.height
-        gCanvas.width =  elCanvasContainer.clientHeight
+        var aspectRatio = gImg.width / gImg.height
+        gCanvas.width = elCanvasContainer.clientHeight
         gCanvas.height = gCanvas.width * aspectRatio
-        elCanvasContainer.height= gCanvas.height;
+        elCanvasContainer.height = gCanvas.height;
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
         renderText()
     };
@@ -50,10 +51,10 @@ function renderDesktopCanvas() {
     gImg.onload = function () {
         // setTextHeight()
         var elCanvasContainer = document.querySelector('.canvas-container')
-        var aspectRatio= gImg.width/gImg.height
-        gCanvas.height =  elCanvasContainer.clientHeight
+        var aspectRatio = gImg.width / gImg.height
+        gCanvas.height = elCanvasContainer.clientHeight
         gCanvas.width = gCanvas.height * aspectRatio
-        elCanvasContainer.height= gCanvas.height;
+        elCanvasContainer.height = gCanvas.height;
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
         renderText()
     };
@@ -138,6 +139,7 @@ function clickedText(idx) {
     console.log(idx)
     document.querySelector('#line-selector').value = gTexts[idx].line
     document.querySelector('#text-input').value = gTexts[idx].text
+    document.querySelector('#font-color').value = gTexts[idx].color
     gCurrTextLine = gTexts[idx].line
     gIsDragActive = true
 

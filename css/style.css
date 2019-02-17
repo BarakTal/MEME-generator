@@ -15,8 +15,9 @@ body{
     
 }
 .canvas-container {
-    height: auto;
+    /* height: auto; */
     border: 1px solid black;
+    /* flex-grow: 1; */
 }
 .editor-container{
     background-color: rgb(168, 176, 182);

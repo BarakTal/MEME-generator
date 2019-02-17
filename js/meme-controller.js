@@ -11,23 +11,38 @@ function init() {
     renderCanvas(gCanvas)
 }
 
-function resizeCanvas(canvas) {
-    var elCanvasContainer = document.querySelector('.canvas-container')
-    canvas.width = elCanvasContainer.offsetWidth
-    canvas.height = elCanvasContainer.offsetHeight
-}
+// function resizeCanvas(canvas) {
+//     var elCanvasContainer = document.querySelector('.canvas-container')
+//     canvas.width = elCanvasContainer.offsetWidth
+//     canvas.height = elCanvasContainer.offsetHeight
+// }
 
 function renderCanvas() {
     gImg = new Image();
     gImg.onload = function () {
         // setTextHeight()
-        gCanvas.width = gImg.naturalWidth
-        gCanvas.height = gImg.naturalHeight
+        var elCanvasContainer = document.querySelector('.canvas-container')
+        var aspectRatio= gImg.width/gImg.height
+        gCanvas.height =  elCanvasContainer.clientHeight
+        gCanvas.width = gCanvas.height * aspectRatio
+        elCanvasContainer.height= gCanvas.height;
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
         renderText()
     };
     gImg.src = 'img/8.jpg';
 }
+// function renderCanvas() {
+//     gImg = new Image();
+//     gImg.onload = function () {
+//         // setTextHeight()
+//         var aspectRatio= gImg.naturalWidth/gImg.naturalHeight
+//         gCanvas.width = gImg.naturalWidth
+//         gCanvas.height = gImg.naturalHeight
+//         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
+//         renderText()
+//     };
+//     gImg.src = 'img/8.jpg';
+// }
 
 function renderText() {
     for (var i = 0; i < gTexts.length; i++) {
@@ -107,20 +122,20 @@ function clickedText(idx) {
     document.querySelector('#line-selector').value = gTexts[idx].line
     document.querySelector('#text-input').value = gTexts[idx].text
     gCurrTextLine = gTexts[idx].line
-    gIsDragActive=true
+    gIsDragActive = true
 
 }
 
-function onActiveDrag(ev){
-    gIsDragActive=true
+function onActiveDrag(ev) {
+    gIsDragActive = true
 }
 
 
-function onMouseReleased(ev){
-    gIsDragActive=false
+function onMouseReleased(ev) {
+    gIsDragActive = false
 }
 
-function onMouseMove(ev){
+function onMouseMove(ev) {
     if (!gIsDragActive) return;
     moveText(ev)
     renderCanvas()

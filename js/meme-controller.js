@@ -16,8 +16,29 @@ function init() {
 //     canvas.width = elCanvasContainer.offsetWidth
 //     canvas.height = elCanvasContainer.offsetHeight
 // }
+function renderCanvas(){
+    var bodyWidth= document.querySelector('body').clientWidth
+    if (bodyWidth>750) renderDesktopCanvas()
+    else {renderMobileCanvas()}
+}
 
-function renderCanvas() {
+function renderMobileCanvas() {
+    gImg = new Image();
+    gImg.onload = function () {
+        // setTextHeight()
+        var elCanvasContainer = document.querySelector('.canvas-container')
+        var aspectRatio= gImg.width/gImg.height
+        gCanvas.width =  elCanvasContainer.clientHeight
+        gCanvas.height = gCanvas.width * aspectRatio
+        elCanvasContainer.height= gCanvas.height;
+        gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
+        renderText()
+    };
+    gImg.src = 'img/8.jpg';
+}
+
+
+function renderDesktopCanvas() {
     gImg = new Image();
     gImg.onload = function () {
         // setTextHeight()
@@ -31,18 +52,7 @@ function renderCanvas() {
     };
     gImg.src = 'img/8.jpg';
 }
-// function renderCanvas() {
-//     gImg = new Image();
-//     gImg.onload = function () {
-//         // setTextHeight()
-//         var aspectRatio= gImg.naturalWidth/gImg.naturalHeight
-//         gCanvas.width = gImg.naturalWidth
-//         gCanvas.height = gImg.naturalHeight
-//         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
-//         renderText()
-//     };
-//     gImg.src = 'img/8.jpg';
-// }
+
 
 function renderText() {
     for (var i = 0; i < gTexts.length; i++) {

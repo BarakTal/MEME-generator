@@ -53,6 +53,7 @@
                 <button onclick="onDeleteLine()" class="fa fa-eraser"></button>
                 <button onclick="onFontSizeChange(5)" class="fas fa-plus"></button>
                 <button onclick="onFontSizeChange(-5)" class="fas fa-minus"></button>
+                <a href="#"  onclick="downloadImg(this)" download="my-canvas.jpg"><button class="fa fa-save save"></button></a>
             </div>
             <div class="select-container">
                 Change the color
@@ -76,7 +77,6 @@
                 <input autofocus oninput="onWriteOnCanvas(this.value)" class="input-group-text"
                     placeholder="enter text here" type="text" name="" id="text-input">
             </div>
-            <a href="#" class="fa fa-save save" onclick="downloadImg(this)" download="my-canvas.jpg"></a>
         </aside>
     </main>
     <footer>

@@ -167,23 +167,26 @@ background-size: cover;
 #text-input{
     margin: 0;
 }
-    .select-container{
-        /* width: 180px; */
-    }
+
     .input{
-        font-size: 1rem
+        font-size: 1rem;
+        margin: 0;
     }
-    .save{
-/* font-size: 34px; */
-    }
+header{}
     .button-container{
         font-size: 1rem;
         
     }
     .nav-bar{
-        /* width: 75%; */
+        width: 75%;
+        font-size: 1rem;
+    }
+    .nav-bar a{
+        font-size: 1rem;
+        width: 30px;
     }
     .logo{
-        /* width: 25%; */
+        width: 25%;
+        font-size: 1rem
     }
 }

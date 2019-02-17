@@ -6,8 +6,9 @@
 function init() {
 
     gCtx = gCanvas.getContext('2d')
-    gTexts = createTexts()
     console.log(gCanvas)
+    setCanvas()
+    gTexts = createTexts()
     renderCanvas(gCanvas)
 }
 
@@ -16,10 +17,16 @@ function init() {
 //     canvas.width = elCanvasContainer.offsetWidth
 //     canvas.height = elCanvasContainer.offsetHeight
 // }
-function renderCanvas(){
+
+function setCanvas() {
     var bodyWidth= document.querySelector('body').clientWidth
     if (bodyWidth>750) renderDesktopCanvas()
-    else {renderMobileCanvas()}
+    else renderMobileCanvas()
+}
+
+function renderCanvas(){
+    gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
+    renderText()
 }
 
 function renderMobileCanvas() {

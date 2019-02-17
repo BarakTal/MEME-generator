@@ -110,6 +110,7 @@ function changeFont(val) {
 function deleteLine() {
     var index = findTextIdx()
     gTexts[index].text = ''
+    textInputToDefault(index)
 }
 
 function mouseClicked(ev) {

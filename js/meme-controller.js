@@ -122,8 +122,12 @@ function onChangeFont(val) {
     renderCanvas()
 }
 function onDeleteLine() {
+    document.querySelector('#text-input').value = ''
     deleteLine()
     renderCanvas()
+}
+function textInputToDefault(idx) {
+
 }
 
 function onSendEmail() {

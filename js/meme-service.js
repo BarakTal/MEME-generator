@@ -3,11 +3,10 @@
 var gCurrTextLine = 'line-one'
 var gCtx
 var gImg
-var gCanvas = document.querySelector('.my-canvas')
 var gTexts
 var gIsDragActive = false
 var gMouseObj
-
+var gCanvas = document.querySelector('.my-canvas')
 
 function createTexts() {
     var textArr = [
@@ -66,7 +65,9 @@ function findTextIdx() {
     return index
 }
 
-
+function getImageFromStorage(){
+    return localStorage.getItem('imgSrc')
+}
 
 function changeColor(val, index) {
     gTexts[index].color = val

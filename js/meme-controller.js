@@ -4,24 +4,25 @@
 
 
 function init() {
+    var imgSrc = getImageFromStorage()
 
     gCtx = gCanvas.getContext('2d')
     console.log(gCanvas)
-    setCanvas()
+    setCanvas(imgSrc)
     gTexts = createTexts()
     renderCanvas(gCanvas)
 }
 
 // function resizeCanvas(canvas) {
-//     var elCanvasContainer = document.querySelector('.canvas-container')
-//     canvas.width = elCanvasContainer.offsetWidth
-//     canvas.height = elCanvasContainer.offsetHeight
-// }
-
-function setCanvas() {
+    //     var elCanvasContainer = document.querySelector('.canvas-container')
+    //     canvas.width = elCanvasContainer.offsetWidth
+    //     canvas.height = elCanvasContainer.offsetHeight
+    // }
+    
+    function setCanvas(imgSrc) {
     var bodyWidth = document.querySelector('body').clientWidth
-    if (bodyWidth > 750) renderDesktopCanvas()
-    else renderMobileCanvas()
+    if (bodyWidth > 750) renderDesktopCanvas(imgSrc)
+    else renderMobileCanvas(imgSrc)
 }
 
 function renderCanvas() {
@@ -30,7 +31,7 @@ function renderCanvas() {
     renderText()
 }
 
-function renderMobileCanvas() {
+function renderMobileCanvas(imgSrc) {
     gImg = new Image();
     gImg.onload = function () {
         // setTextHeight()
@@ -42,11 +43,12 @@ function renderMobileCanvas() {
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
         renderText()
     };
-    gImg.src = 'img/8.jpg';
+    gImg.src = imgSrc;
+    
 }
 
 
-function renderDesktopCanvas() {
+function renderDesktopCanvas(imgSrc) {
     gImg = new Image();
     gImg.onload = function () {
         // setTextHeight()
@@ -58,7 +60,7 @@ function renderDesktopCanvas() {
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height);
         renderText()
     };
-    gImg.src = 'img/8.jpg';
+    gImg.src = imgSrc;
 }
 
 

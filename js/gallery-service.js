@@ -46,3 +46,11 @@ function makeId() {
 
     return txt;
 }
+
+function findImgById(id){
+    
+        var index = gMemes.findIndex(function (meme) {
+            return (meme.id === id)
+        })
+        return index
+}

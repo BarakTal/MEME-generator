@@ -26,7 +26,7 @@ function onPickMeme(val, id) {
     console.log(imgSrc)
     saveImg(imgSrc)
 
-    window.location = ('index.html')
+    window.location = ('./editor.html')
 }
 
 function saveImg(imgSrc){

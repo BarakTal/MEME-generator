@@ -15,11 +15,12 @@ h1{
 }
 
 .card{
-    background: lightblue;
+    /* background: lightblue;
     border: 1px solid red;
-    max-width: 300px;
+    max-width: 300px; */
 }
-.card-img{
-    background-color: blue;
-    height: 300px;
+
+.hexagon-container{
+    display: flex;
+    flex-wrap: wrap;
 }

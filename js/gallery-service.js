@@ -32,7 +32,19 @@ var gMemes = [
     {
         id: makeId(),
         url: 'img/drevil.jpg'
-    }
+    },
+    {
+        id: makeId(),
+        url: 'img/putin.jpg'
+    },
+    {
+        id: makeId(),
+        url: 'img/img6.jpg'
+    },
+    {
+        id: makeId(),
+        url: 'img/12.jpg'
+    },
 ]
 
 function makeId() {

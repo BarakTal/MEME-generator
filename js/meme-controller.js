@@ -10,6 +10,7 @@ function init() {
     console.log(gCanvas)
     setCanvas(imgSrc)
     gTexts = createTexts()
+    setTextHeight()
     renderCanvas(gCanvas)
 }
 

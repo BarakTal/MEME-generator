@@ -14,7 +14,7 @@ function createTexts() {
             line: 'line-one',
             font: 'Impact',
             style: 'normal',
-            size: 50,
+            size: 30,
             x: 50,
             y: 50,
             color: 'black',
@@ -25,7 +25,7 @@ function createTexts() {
             line: 'line-two',
             font: 'Impact',
             style: 'normal',
-            size: 50,
+            size: 30,
             x: 50,
             y: 200,
             color: 'black',
@@ -36,7 +36,7 @@ function createTexts() {
             line: 'line-three',
             font: 'Impact',
             style: 'normal',
-            size: 50,
+            size: 30,
             x: 50,
             y: 100,
             color: 'black',
@@ -49,9 +49,9 @@ function createTexts() {
 
 function setTextHeight() {
     gTexts.forEach(element => {
-        if (element.line === 'line-one') element.y = gImg.naturalHeight / 10
-        if (element.line === 'line-two') element.y = element.y = gImg.naturalHeight / 2
-        if (element.line === 'line-three') element.y = element.y = gImg.naturalHeight / 3
+        if (element.line === 'line-one') element.y = 50
+        if (element.line === 'line-two') element.y = element.y = (gCanvas.clientHeight/10)*9
+        if (element.line === 'line-three') element.y = element.y =  (gCanvas.clientHeight/2)
 
     });
 }
@@ -87,7 +87,7 @@ function alignText(val) {
     }
     if (val === "down") curr.y += 5
     if (val === 'left') curr.x = 50
-    if (val === 'right') curr.x = gImg.naturalWidth / 2
+    if (val === 'right') curr.x = gCanvas.width / 2
     if (val === 5 || val === -5) curr.x += val
 
 }
@@ -105,6 +105,7 @@ function textDecoration(val) {
 function changeFont(val) {
     var index = findTextIdx()
     var curr = gTexts[index]
+    console.log(val)
     curr.font = val
 }
 

@@ -42,30 +42,35 @@
             <div class="button-container">
 
                 <!-- <input onchange="onColorChange(this.value)" type="color" name="" id="font-color"> -->
-                <button onclick="onAlignText('left')" class="fa fa-align-left"></button>
-                <button onclick="onAlignText('right')" class="fa fa-align-right"></button>
+                <button onclick="onAlignText('up')" class="fas fa-arrow-up"></button> 
+                <button onclick="onAlignText('down')" class="fas fa-arrow-down"></button>
                 <button onclick="onAlignText(-5)" class="fas fa-arrow-left"></button>
                 <button onclick="onAlignText(5)" class="fas fa-arrow-right"></button>
-                <button onclick="onAlignText('up')" class="fas fa-arrow-up"></button>
-                <button onclick="onAlignText('down')" class="fas fa-arrow-down"></button>
+                <button onclick="onAlignText('left')" class="fa fa-align-left"></button>
+                <button onclick="onAlignText('right')" class="fa fa-align-right"></button>
                 <button onclick="onTextDecoration('bold')" class="fa fa-bold"></button>
                 <button onclick="onTextDecoration('italic')" class="fa fa-italic"></button>
-                <button onclick="onDeleteLine()" class="fa fa-eraser"></button>
                 <button onclick="onFontSizeChange(5)" class="fas fa-plus"></button>
                 <button onclick="onFontSizeChange(-5)" class="fas fa-minus"></button>
+                <button onclick="onDeleteLine()" class="fa fa-eraser"></button>
                 <a href="#" onclick="downloadImg(this)" download="my-canvas.jpg"><button
                         class="fa fa-save save"></button></a>
             </div>
+            <div class="input-container">
+
+                <input autofocus oninput="onWriteOnCanvas(this.value)" class="input-group-text"
+                    placeholder="enter text here" type="text" name="" id="text-input">
+            </div>
             <div class="select-container">
-                Change the color
+                Change text color 
                 <input onchange="onColorChange(this.value)" type="color" class="input" name="" id="font-color">
-                Change the font
+                <br>Change font 
                 <select onchange="onChangeFont(this.value)" class="input btn btn-secondary dropdown-toggle">
-                    <option>impcat</option>
+                    <option>impact</option>
                     <option>Courier </option>
                     <option>monospace</option>
                 </select>
-                Edit text lines
+               <br> Edit text lines
                 <select onchange="onChangeCurrLine(this.value)" id="line-selector"
                     class="input btn btn-secondary dropdown-toggle">
                     <option>line-one</option>
@@ -73,11 +78,7 @@
                     <option>line-three</option>
                 </select>
             </div>
-            <div class="input-container">
 
-                <input autofocus oninput="onWriteOnCanvas(this.value)" class="input-group-text"
-                    placeholder="enter text here" type="text" name="" id="text-input">
-            </div>
         </aside>
     </main>
     <footer>

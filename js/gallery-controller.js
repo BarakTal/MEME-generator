@@ -4,7 +4,17 @@
 function init() {
     renderMemes()
 }
-
+function share(){
+    if (navigator.share) {
+        navigator.share({
+            title: 'Meme Generator',
+            text: 'Check out my Meme Generator — it rocks!',
+            url: 'https://baraktal.github.io/MEME-generator/',
+        })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
+      }
+}
 function renderMemes() {
     var strHtml = ''
     var hex = document.querySelector('.hexagon-container')
